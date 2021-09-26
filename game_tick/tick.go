@@ -36,7 +36,9 @@ func (t *ticker) startTicker() {
 		default:
 			tickStartTime := time.Now()
 
+			t.game.Lock()
 			t.tick()
+			t.game.Unlock()
 
 			millisPassed := time.Now().Sub(tickStartTime).Milliseconds()
 			if millisPassed < int64(t.tickPeriod) {
