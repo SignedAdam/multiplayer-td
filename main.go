@@ -20,7 +20,3 @@ func main() {
 
 	<-sigStopServerChan
 }
-
-func initAI() {
-
-}
