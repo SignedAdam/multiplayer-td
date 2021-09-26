@@ -1,8 +1,14 @@
 package ai
 
+import (
+	"github.com/SignedAdam/multiplayer_tower_defense/pkg/game/unit"
+	"github.com/SignedAdam/multiplayer_tower_defense/pkg/game/world"
+)
+
 type AI interface {
 	Placeholder()
-	//Move
+	Move(world *world.World, target unit.Unit) error
+	ChooseTarget(world *world.World, units []unit.Unit) unit.Unit
 	//ChooseNextTarget
 }
 
